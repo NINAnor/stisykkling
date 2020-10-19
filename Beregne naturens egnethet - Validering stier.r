@@ -25,7 +25,7 @@ source("Slitasje og Egnethet.Scripts/Scripts/add.joint.LUT.r")
 LUT.dir<-"Slitasje og Egnethet.LookUpTables/"
 
 VegDur.LUT<-read.csv(file=paste0(LUT.dir,"Vegetation.LUT.csv"),stringsAsFactors=FALSE)
-LM.LUT<-read.csv(file=paste0(LUT.dir,"Løsmasse.reclass.LUT.csv"),stringsAsFactors=FALSE)
+LM.LUT<-read.csv(file=paste0(LUT.dir,"LÃ¸smasse.reclass.LUT.csv"),stringsAsFactors=FALSE)
 Slope.LUT<-read.csv(file=paste0(LUT.dir,"Slope.LUT.csv"),stringsAsFactors=FALSE)
 
 V.sens.LUT<-read.csv(file=paste0(LUT.dir,"Vegetation.sensitivity.LUT.csv"),stringsAsFactors=FALSE)
@@ -60,7 +60,7 @@ if (TRAILNAME=="LangsuaValidation") {
   Veg.name<-"Langsua_Vegetasjon_25833.tif"
   
   LM.dir<-"Slitasje og Egnethet.GISdata/LangsuaRasters/"
-  LM.name<-"Langsua_Løsmasse_25833.tif"
+  LM.name<-"Langsua_LÃ¸smasse_25833.tif"
 
 
 }
@@ -86,7 +86,7 @@ if(TRAILNAME=="SjunkhattenValidation") {
   Veg.name<-"Sjunkhatten_vegetasjon_25833.tif"
   
   LM.dir<-"Slitasje og Egnethet.GISdata/SjunkhattenRasters/"
-  LM.name<-"Sjunkhatten_Løsmasse_25833.tif"
+  LM.name<-"Sjunkhatten_LÃ¸smasse_25833.tif"
   
 }
 
@@ -181,7 +181,7 @@ Tr$Vegetasjon<-VegDur.LUT$Vegetasjonsklasse[match(Tr$Vegkode,VegDur.LUT$Kode)]
 Tr$Vegklasse<-VegDur.LUT$Klasse[match(Tr$Vegkode,VegDur.LUT$Kode)]
 
 
-# 4) Løssmasseklasse
+# 4) LÃ¸ssmasseklasse
 
 Tr$LM<-extract(LM, Tr.c)
 Tr$LMklasse<-LM.LUT$Klasse[match(Tr$LM,LM.LUT$Kode)]
